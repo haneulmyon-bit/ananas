@@ -1,0 +1,3 @@
+-r pc_host/requirements.txt
+-r web_ui/requirements.txt
+pytest>=8.0.0

@@ -1,0 +1,52 @@
+# STM32 / C build artifacts
+build/
+build_*/
+*.o
+*.d
+*.lst
+*.su
+*.elf
+*.hex
+*.bin
+*.map
+*.a
+*.out
+
+# Generated helper dumps
+make_rules_dump.txt
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Python virtual environments
+.venv/
+venv/
+env/
+pc_host/.venv/
+web_ui/.venv/
+
+# Packaging / coverage artifacts
+*.egg-info/
+.coverage
+coverage.xml
+htmlcov/
+
+# IDE/editor
+.vscode/
+.idea/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp

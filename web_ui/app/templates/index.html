@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>STM32 Motor Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel panel-title">
+        <h1>STM32 Motor Telemetry</h1>
+        <div class="status-row">
+          <span id="connDot" class="dot offline"></span>
+          <span id="connText">Disconnected</span>
+          <span id="ageText">age: n/a</span>
+          <label class="port-label" for="portSelect">port:</label>
+          <select id="portSelect"></select>
+          <button id="btnApplyPort">Apply</button>
+        </div>
+        <div id="serialErr" class="serial-err"></div>
+      </section>
+
+      <section class="panel panel-control">
+        <h2>Motor Control</h2>
+        <div class="slider-wrap">
+          <input id="speedSlider" type="range" min="-100" max="100" value="0" />
+          <div class="speed-value"><span id="speedValue">0</span>%</div>
+        </div>
+        <div class="btn-row">
+          <button id="btnSet">Set Speed</button>
+          <button id="btnForward">Forward</button>
+          <button id="btnReverse">Reverse</button>
+          <button id="btnStop" class="danger">Stop</button>
+        </div>
+      </section>
+
+      <section class="panel panel-hall">
+        <h2>Hall Sensors</h2>
+        <div class="lamps">
+          <div class="lamp-wrap">
+            <div id="hall1Lamp" class="lamp off"></div>
+            <span>H1</span>
+          </div>
+          <div class="lamp-wrap">
+            <div id="hall2Lamp" class="lamp off"></div>
+            <span>H2</span>
+          </div>
+          <div class="lamp-wrap">
+            <div id="hall3Lamp" class="lamp off"></div>
+            <span>H3</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel panel-chart">
+        <h2>FSR Live Plot</h2>
+        <canvas id="fsrChart"></canvas>
+      </section>
+
+      <section class="panel panel-values">
+        <h2>Latest Values</h2>
+        <div class="kv">t(ms): <strong id="vTs">0</strong></div>
+        <div class="kv">EMG: <strong id="vEmg">0</strong></div>
+        <div class="kv">FSR2: <strong id="vFsr2">0</strong></div>
+        <div class="kv">FSR1: <strong id="vFsr1">0</strong></div>
+        <div class="kv">Motor speed: <strong id="vMotorSpd">0</strong>%</div>
+        <div class="kv">Motor duty: <strong id="vMotorDuty">0</strong>%</div>
+        <div class="kv">Direction: <strong id="vMotorDir">STOP</strong></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
