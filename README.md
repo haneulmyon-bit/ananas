@@ -117,19 +117,6 @@ python -m pytest shared/tests -q
 
 - Modular architecture notes: [`README_modular_architecture.md`](README_modular_architecture.md)
 
-## Publish To GitHub
-
-If this folder is not yet a Git repository:
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/<your-user>/<your-repo>.git
-git push -u origin main
-```
-
 ## License
 
 This project is licensed under the MIT License. See [`LICENSE`](LICENSE).
